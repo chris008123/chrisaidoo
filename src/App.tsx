@@ -561,7 +561,7 @@ function Hero() {
           <div
             style={{
               position: 'fixed',
-              top: '50%', left: '50%',
+              top: '70%', left: '70%',
               transform: 'translate(-50%, -50%)',
               zIndex: 101,
               width: 'min(640px, 92vw)',
