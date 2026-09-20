@@ -647,6 +647,7 @@ function About() {
                 src="/photo.jpg"
                 alt="Chris Atta Aidoo"
                 className="w-full h-full object-cover"
+                style={{ objectPosition: '70% 50%' }}
               />
             </div>
 
