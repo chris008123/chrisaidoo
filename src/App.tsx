@@ -620,27 +620,17 @@ function About() {
 
         {/* Top row: photo + bio */}
         <div className="grid md:grid-cols-[360px_1fr] gap-12 items-start mb-12">
-          {/* Profile photo placeholder */}
+          {/* Profile photo */}
           <div className="flex flex-col gap-3">
             <div
               className="w-full aspect-square rounded-sm border overflow-hidden relative flex items-center justify-center"
               style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-border-soft)' }}
             >
-              {/* Replace src with your actual photo URL */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 select-none">
-                <div
-                  className="w-16 h-16 rounded-full border-2 flex items-center justify-center"
-                  style={{ borderColor: 'var(--color-border)', color: 'var(--color-border)' }}
-                >
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <circle cx="12" cy="8" r="4" />
-                    <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-                  </svg>
-                </div>
-                <span className="font-mono text-xs" style={{ color: 'var(--color-border)' }}>
-                  photo.jpeg
-                </span>
-              </div>
+              <img
+                src="/photo.jpg"
+                alt="Chris Atta Aidoo"
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Social icons under photo */}
