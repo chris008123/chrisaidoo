@@ -561,7 +561,7 @@ function Hero() {
           <div
             style={{
               position: 'fixed',
-              top: '70%', left: '70%',
+              top: '20%', left: '20%',
               transform: 'translate(-50%, -50%)',
               zIndex: 101,
               width: 'min(640px, 92vw)',
@@ -647,7 +647,7 @@ function About() {
                 src="/photo.jpg"
                 alt="Chris Atta Aidoo"
                 className="w-full h-full object-cover"
-                style={{ objectPosition: '70% 50%' }}
+                style={{ objectPosition: '40% 50%' }}
               />
             </div>
 
