@@ -664,7 +664,7 @@ function About() {
                   <path d="m2 7 10 7 10-7"/>
                 </svg>
               </a>
-              <a href="https://portfolio-35ot.vercel.app" target="_blank" rel="noopener noreferrer" title="Portfolio"
+              <a href="https://chrisaidoo.vercel.app" target="_blank" rel="noopener noreferrer" title="Portfolio"
                 className="transition-opacity hover:opacity-50" style={{ color: 'var(--color-text)' }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10"/>
@@ -1498,7 +1498,7 @@ function Contact() {
               { label: 'Email',     value: 'aidoochris0081@gmail.com',          href: 'mailto:aidoochris0081@gmail.com' },
               { label: 'GitHub',    value: 'github.com/chris008123',             href: 'https://github.com/chris008123' },
               { label: 'LinkedIn',  value: 'linkedin.com/in/chris-atta-aidoo-atta',   href: 'https://linkedin.com/in/chris-atta-aidoo-atta' },
-              { label: 'Portfolio', value: 'portfolio-35ot.vercel.app',           href: 'https://portfolio-35ot.vercel.app' },
+              { label: 'Portfolio', value: 'aidoochris.vercel.app',           href: 'https://aidoochris.vercel.app' },
               { label: 'Phone',     value: '+233 54 764 5984',                    href: 'tel:+233547645984' },
             ].map(({ label, value, href }) => (
               <div key={label} className="flex gap-4">
