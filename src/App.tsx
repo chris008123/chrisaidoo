@@ -1,13 +1,30 @@
 import { useState, useEffect, useRef } from 'react'
 
 // ─── EMAILJS CONFIG ───────────────────────────────────────────────────
+// Pulled from environment variables at build time (Vite requires the
+// VITE_ prefix to expose vars to client code).
+//
 // 1. Sign up at https://emailjs.com
-// 2. Add an Email Service (Gmail) → copy the Service ID below
-// 3. Create an Email Template → copy the Template ID below
-// 4. Go to Account → API Keys → copy your Public Key below
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY'
+// 2. Add an Email Service (Gmail) → copy the Service ID
+// 3. Create an Email Template → copy the Template ID
+// 4. Go to Account → API Keys → copy your Public Key
+// 5. Create a `.env` file at your project root (see .env.example) with:
+//      VITE_EMAILJS_SERVICE_ID=your_service_id
+//      VITE_EMAILJS_TEMPLATE_ID=your_template_id
+//      VITE_EMAILJS_PUBLIC_KEY=your_public_key
+// 6. Restart `npm run dev` after creating/editing .env — Vite only
+//    reads env files on startup, not on hot reload.
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+if (import.meta.env.DEV && (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY)) {
+  // eslint-disable-next-line no-console
+  console.warn(
+    '[EmailJS] One or more VITE_EMAILJS_* env vars are missing. ' +
+    'The contact form will fail to send until .env is set up — see .env.example.'
+  )
+}
 // ─────────────────────────────────────────────────────────────────────
 
 // ─── DATA ────────────────────────────────────────────────────────────
@@ -1441,10 +1458,15 @@ function Contact() {
           template_id: EMAILJS_TEMPLATE_ID,
           user_id:     EMAILJS_PUBLIC_KEY,
           template_params: {
-            from_name:  form.name,
-            from_email: form.email,
-            subject:    form.subject,
-            message:    form.message,
+            name:     form.name,
+            time:     new Date().toLocaleString('en-GB', {
+                        dateStyle: 'medium',
+                        timeStyle: 'short',
+                      }),
+            message:  form.subject
+                        ? `Subject: ${form.subject}\n\n${form.message}`
+                        : form.message,
+            reply_to: form.email,
           },
         }),
       })
