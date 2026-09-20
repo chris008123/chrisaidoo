@@ -1,0 +1,10 @@
+{
+  "description": "A minimalist, developer-focused portfolio site with a centralized, easily customizable color system for consistent, professional branding.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
