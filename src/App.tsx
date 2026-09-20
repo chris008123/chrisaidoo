@@ -638,7 +638,7 @@ function About() {
                   </svg>
                 </div>
                 <span className="font-mono text-xs" style={{ color: 'var(--color-border)' }}>
-                  photo.jpg
+                  photo.jpeg
                 </span>
               </div>
             </div>
