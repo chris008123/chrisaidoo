@@ -710,11 +710,22 @@ function About() {
 
             <div className="flex gap-3 flex-wrap">
               <a
-                href="#"
+                href="/cv.pdf"
+                download="Chris-Atta-Aidoo-CV.pdf"
                 className="font-mono text-xs px-4 py-2 border transition-all inline-block"
-                style={{ backgroundColor: 'var(--color-text)', color: 'var(--color-background)', borderColor: 'var(--color-text)' }}
-                onMouseEnter={e => { e.currentTarget.style.backgroundColor = 'var(--color-background)'; e.currentTarget.style.color = 'var(--color-text)' }}
-                onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'var(--color-text)'; e.currentTarget.style.color = 'var(--color-background)' }}
+                style={{
+                  backgroundColor: 'var(--color-text)',
+                  color: 'var(--color-background)',
+                  borderColor: 'var(--color-text)'
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.backgroundColor = 'var(--color-background)'
+                  e.currentTarget.style.color = 'var(--color-text)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.backgroundColor = 'var(--color-text)'
+                  e.currentTarget.style.color = 'var(--color-background)'
+                }}
               >
                 Download CV /
               </a>
